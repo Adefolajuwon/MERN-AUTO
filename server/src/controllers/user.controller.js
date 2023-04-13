@@ -44,7 +44,7 @@ async function sendEmail(req, res, next) {
 		from: 'oadefolajuwon@gmail.com',
 		to: recipient,
 		subject: 'welcome to out company',
-		text: 'We are happy for you',
+		text: 'We are happy for you my boy',
 	};
 
 	try {
