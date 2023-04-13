@@ -34,7 +34,7 @@ async function controllerAuthGoogle(req, res, next) {
 	}
 	next();
 }
-async function sendEmail(req, res) {
+async function sendEmail(req, res, next) {
 	const recipient = 'adefolajuwonoyebola1@gmail.com';
 	// const mailSubject = req.body.subject;
 	// const mailBody = req.body.message;
