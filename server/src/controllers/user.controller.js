@@ -43,7 +43,7 @@ async function sendEmail(req, res, next) {
 	let mailOptions = {
 		from: 'oadefolajuwon@gmail.com',
 		to: recipient,
-		subject: 'welcome to out company',
+		subject: 'welcome to out company.',
 		text: 'We are happy for you my boy.',
 	};
 
