@@ -6,7 +6,7 @@ mongoose.connection.once('open', () => {
 });
 
 mongoose.connection.on('error', (e) => {
-	console.log('Mongoose connection failed..' + e);
+	console.log('Mongoose connection failed......' + e);
 });
 async function startMongoose() {
 	await mongoose.connect(process.env.MONGODB_URL);
