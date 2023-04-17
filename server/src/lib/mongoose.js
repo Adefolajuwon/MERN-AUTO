@@ -2,7 +2,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 
 mongoose.connection.once('open', () => {
-	console.log('Mongoose connection started...');
+	console.log('Mongoose connection started....');
 });
 
 mongoose.connection.on('error', (e) => {
