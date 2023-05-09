@@ -15,7 +15,7 @@ async function controllerAuthGoogle(req, res, next) {
 			return;
 		}
 		req.session.profile = req.user;
-		// Add user to database if user doesn't exists
+		// Add user to database if user doesn't exists.
 		let response = await storeGoogleUser(req.user);
 		if (response?.error) {
 			res.redirect(`/login?success=false&message=Authentication failed`);
