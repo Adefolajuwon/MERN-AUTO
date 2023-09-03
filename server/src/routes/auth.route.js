@@ -12,7 +12,6 @@ const {
 } = require('../controllers/user.controller');
 
 const authRouter = express.Router();
-// Route to handle sending mails
 
 authRouter.use(
 	session({
