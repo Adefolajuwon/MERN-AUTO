@@ -142,23 +142,19 @@ async function controllerFetchLoggedInUser(req, res) {
 			res.status(401).json({ error: 'User not authenticated' });
 			return;
 		}
-
 		auth = auth.split(' ');
 		let token = auth[1];
-
 		let user = jwt.verify(token, process.env.JWT_SECRET);
 		if (!user._id && !user.email) {
 			res.status(401).json({ error: 'Invalid authentication token' });
 			return;
 		}
-
 		user = await fetchUserByEmail(user.email);
 		if (!user) {
 			res.status(401).json({ error: 'An error occurred' });
 			return;
 		}
 		delete user.password;
-
 		res.status(200).json(user);
 	} catch (e) {
 		res.status(401).json({ error: 'An error occurred' });
