@@ -1,4 +1,4 @@
-const userSchema = require("../schemas/user.schema");
+const userSchema = require('../schemas/user.schema');
 
 async function storeGoogleUser(user) {
 	try {
@@ -12,23 +12,22 @@ async function storeGoogleUser(user) {
 		}
 		return user;
 	} catch (e) {
-		return { error: "An error occurred" };
+		return { error: 'An error occurred' };
 	}
 }
 
 async function insertNewUser(user) {
 	try {
 		let { email } = user;
-		// Check if the user already exists
 		let response = await userSchema.findOne({ email });
 		if (response) {
-			return { error: "User already exists" };
+			return { error: 'User already exists' };
 		}
 
 		response = await userSchema.create(user);
 		return response;
 	} catch (e) {
-		return { error: "An error occurred" };
+		return { error: 'An error occurred' };
 	}
 }
 
@@ -37,7 +36,7 @@ async function fetchUserByEmail(email) {
 		let response = await userSchema.findOne({ email }, { __v: 0 });
 		return response;
 	} catch (e) {
-		return { error: "An error occurred" };
+		return { error: 'An error occurred' };
 	}
 }
 
