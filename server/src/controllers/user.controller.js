@@ -135,7 +135,6 @@ async function controllerVerifyUserCredentials(req, res) {
 }
 
 async function controllerFetchLoggedInUser(req, res) {
-	// Check header for token
 	try {
 		let auth = req.headers.authorization;
 		if (!auth || !auth.startsWith('Bearer ')) {
